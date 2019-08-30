@@ -28,6 +28,12 @@ SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}.tar.gz \
 	file://iosched-slice_idle-1.patch \
 	file://improve_the_overall_abi_and_fpu_mode_checks.patch \
 	file://set_o32_default_fpu_flags.patch \
+	file://0001-Support-TBS-USB-drivers-for-4.0.1-kernel.patch \
+	file://0001-TBS-fixes-for-4.0.1-kernel.patch \
+	file://0001-STV-Add-PLS-support.patch \
+	file://0001-STV-Add-SNR-Signal-report-parameters.patch \
+	file://blindscan2.patch \
+	file://0001-stv090x-optimized-TS-sync-control.patch \
 	file://kernel-gcc6.patch \
 	file://kernel-gcc7.patch \
 	"
