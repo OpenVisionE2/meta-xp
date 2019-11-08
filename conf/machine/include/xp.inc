@@ -55,7 +55,10 @@ IMAGE_CMD_ubi_append = " \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff textlcd osdposition hdmicec ci blindscan-tbs"
+MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff textlcd osdposition hdmicec ci blindscan-tbs middleflash"
+
+# Broken bootloader can only flash around 100 MB
+FLASHSIZE = "96"
 
 require conf/machine/include/tune-mips32.inc
 require conf/machine/include/xp-wifi.inc
