@@ -48,6 +48,7 @@ IMAGE_CMD_ubi_append = " \
 	cp ${DEPLOY_DIR_IMAGE}/vmlinux.gz-${MACHINE}.bin ${IMGDEPLOYDIR}/${IMAGEDIR}/kernel.bin; \
 	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
 	echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
+	rm -f ${IMGDEPLOYDIR}/*.zip; \
 	cd ${IMGDEPLOYDIR}; \
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
 	rm -Rf ${IMAGEDIR}; \
