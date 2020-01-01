@@ -1,7 +1,7 @@
-From 05a1328f10d503e2b3156226cef36b0d0c4df7b2 Mon Sep 17 00:00:00 2001
+From 4f9390cd5e0e10e9207bbb39e38f6b40ac84543e Mon Sep 17 00:00:00 2001
 From: Nicker <nickersk@gmail.com>
-Date: Mon, 23 Jul 2018 14:53:12 +0200
-Subject: [PATCH 2/2] log2 give up on gcc constant optimizations
+Date: Tue, 7 Aug 2018 08:37:14 +0200
+Subject: [PATCH] log2 give up on gcc constant optimizations
 
 
 diff --git a/include/linux/log2.h b/include/linux/log2.h
