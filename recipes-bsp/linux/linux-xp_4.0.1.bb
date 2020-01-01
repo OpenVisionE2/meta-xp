@@ -35,8 +35,6 @@ SRC_URI += "http://downloads.mutant-digital.net/linux-${PV}.tar.gz \
 	file://blindscan2.patch \
 	file://0001-stv090x-optimized-TS-sync-control.patch \
 	file://kernel-gcc6.patch \
-	file://kernel-gcc7.patch \
-	file://kernel-gcc8.patch \
 	file://0002-log2-give-up-on-gcc-constant-optimizations.patch \
 	"
 
@@ -51,7 +49,7 @@ KERNEL_OUTPUT = "vmlinux.gz"
 KERNEL_OUTPUT_DIR = "."
 KERNEL_IMAGEDEST = "tmp"
 
-FILES_kernel-image = "${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}"
+FILES_${KERNEL_PACKAGE_NAME}-image = "/${KERNEL_IMAGEDEST}/${KERNEL_IMAGETYPE}"
 
 KERNEL_EXTRA_ARGS = "EXTRA_CFLAGS=-Wno-attribute-alias"
 
