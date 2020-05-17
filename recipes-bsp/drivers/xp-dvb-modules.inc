@@ -7,7 +7,7 @@ inherit module
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-KV = "4.0.1"
+KV = "4.10.12"
 
 PV = "${KV}+${SRCDATE}"
 

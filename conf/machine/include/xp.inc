@@ -29,6 +29,7 @@ TARGET_ARCH = "mipsel"
 DEFAULTTUNE ?= "mips32el"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xp"
+PREFERRED_VERSION_linux-xp = "4.10.12"
 
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_OUTPUT = "${KERNEL_IMAGETYPE}"
@@ -49,17 +50,19 @@ IMAGE_CMD_ubi_prepend = " \
 
 IMAGE_CMD_ubi_append = " \
 	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
-	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${IMGDEPLOYDIR}/${IMAGEDIR}/rootfs.bin; \
-	cp ${DEPLOY_DIR_IMAGE}/vmlinux.gz-${MACHINE}.bin ${IMGDEPLOYDIR}/${IMAGEDIR}/kernel.bin; \
+	cp ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${IMGDEPLOYDIR}/${IMAGEDIR}/${ROOTFS_FILE}; \
+	gzip -9c ${DEPLOY_DIR_IMAGE}/vmlinux.gz-${MACHINE}.bin > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
 	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
 	echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
 	rm -f ${IMGDEPLOYDIR}/*.zip; \
 	cd ${IMGDEPLOYDIR}; \
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
+	rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff textlcd osdposition hdmicec ci blindscan-tbs middleflash nofhdskin"
+MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff textlcd osdposition hdmicec ci blindscan-tbs middleflash nofhdskin linuxwifi"
 
 # Broken bootloader can only flash around 100 MB
 FLASHSIZE = "96"
