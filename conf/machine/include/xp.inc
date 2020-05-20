@@ -12,7 +12,7 @@ MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
-	${@bb.utils.contains("GST_VERSION", "1.0", "gstreamer1.0-plugin-dvbmediasink", "gst-plugin-dvbmediasink", d)} \
+	gstreamer1.0-plugin-dvbmediasink \
 	ntfs-3g \
 	"
 
