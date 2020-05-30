@@ -68,6 +68,5 @@ MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff textlcd osdposition hdmice
 FLASHSIZE = "96"
 
 require conf/machine/include/tune-mips32.inc
-require conf/machine/include/xp-wifi.inc
 
 BOX_BRAND = "xp"
