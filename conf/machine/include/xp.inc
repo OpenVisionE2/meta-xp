@@ -5,15 +5,10 @@ MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
 	xp-dvb-modules-${MACHINE} \
 	"
 
-MACHINE_ESSENTIAL_EXTRA_RRECOMMENDS = "\
-	kernel-module-cdfs \
-	"
-
 KERNEL_MODULE_AUTOLOAD += "xfs"
 
 MACHINE_EXTRA_RRECOMMENDS = " \
 	gstreamer1.0-plugin-dvbmediasink \
-	ntfs-3g \
 	"
 
 MTD_KERNEL = "mtd1"
