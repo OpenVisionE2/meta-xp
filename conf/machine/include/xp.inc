@@ -1,6 +1,8 @@
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
+RCTYPE = "14"
+
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
 	xp-dvb-modules-${MACHINE} \
 	"
