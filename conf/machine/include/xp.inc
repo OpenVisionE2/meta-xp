@@ -59,7 +59,7 @@ IMAGE_CMD_ubi_append = " \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-MACHINE_FEATURES += "alsa usbhost wlan 3dtv switchoff textlcd osdposition hdmicec ci blindscan-tbs middleflash nofhdskin linuxwifi"
+MACHINE_FEATURES += "alsa usbhost switchoff textlcd osdposition hdmicec ci blindscan-tbs nofhdskin"
 
 # Broken bootloader can only flash around 100 MB
 FLASHSIZE = "96"
