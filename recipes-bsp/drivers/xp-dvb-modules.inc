@@ -3,8 +3,6 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 
-inherit module
-
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
 KV = "4.10.12"
@@ -19,19 +17,20 @@ INHIBIT_PACKAGE_STRIP = "1"
 
 do_compile() {
 }
+
 do_populate_sysroot() {
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf /lib/modules/${KV}/extra"
+FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${base_libdir}/modules/${KV}/extra"
 
 do_compile() {
 }
 
 do_install() {
-	install -d ${D}/lib/modules/${KV}/extra
+	install -d ${D}${base_libdir}/modules/${KV}/extra
 	install -d ${D}/${sysconfdir}/modules-load.d
 	for i in ${MACHINE}_1 ${MACHINE}_2 ${MACHINE}_3 ${MACHINE}_4; do
-		install -m 0755 ${WORKDIR}/$i.ko ${D}/lib/modules/${KV}/extra
+		install -m 0755 ${WORKDIR}/$i.ko ${D}${base_libdir}/modules/${KV}/extra
 		echo $i >> ${D}/${sysconfdir}/modules-load.d/_${MACHINE}.conf
 	done
 }
