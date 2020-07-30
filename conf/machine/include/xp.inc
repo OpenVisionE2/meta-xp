@@ -3,7 +3,7 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
 RCTYPE = "14"
 
-MACHINE_ESSENTIAL_EXTRA_RDEPENDS = "\
+MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	xp-dvb-modules-${MACHINE} \
 	"
 
@@ -23,7 +23,7 @@ SOC_FAMILY = "bcm7358"
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3"
 
 TARGET_ARCH = "mipsel"
-DEFAULTTUNE ?= "mips32el"
+DEFAULTTUNE = "mips32el"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xp"
 PREFERRED_VERSION_linux-xp = "4.10.12"
