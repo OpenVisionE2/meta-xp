@@ -1,12 +1,13 @@
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED += "rtc"
 
+KERNELVERSION = "4.10.12"
+
 RCTYPE = "14"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	xp-dvb-modules-${MACHINE} \
 	"
-
 
 MACHINE_EXTRA_RRECOMMENDS += "\
 	gstreamer1.0-plugin-dvbmediasink \
@@ -25,7 +26,7 @@ TARGET_ARCH = "mipsel"
 DEFAULTTUNE = "mips32el"
 
 PREFERRED_PROVIDER_virtual/kernel = "linux-xp"
-PREFERRED_VERSION_linux-xp = "4.10.12"
+PREFERRED_VERSION_linux-xp = "${KERNELVERSION}"
 
 KERNEL_IMAGETYPE = "vmlinux"
 KERNEL_OUTPUT = "${KERNEL_IMAGETYPE}"
