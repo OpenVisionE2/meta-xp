@@ -5,7 +5,6 @@ LICENSE = "CLOSED"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/${MACHINE}/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
@@ -17,13 +16,7 @@ INHIBIT_PACKAGE_STRIP = "1"
 do_compile() {
 }
 
-do_populate_sysroot() {
-}
-
 FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${nonarch_base_libdir}/modules/${KV}/extra"
-
-do_compile() {
-}
 
 do_install() {
 	install -d ${D}${nonarch_base_libdir}/modules/${KV}/extra
