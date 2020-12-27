@@ -41,14 +41,13 @@ IMAGE_CMD_ubifs_prepend = " \
 	"
 
 IMAGE_CMD_ubi_append = " \
-	mkdir -p ${IMGDEPLOYDIR}/${IMAGEDIR}; \
-	cp -f ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${IMGDEPLOYDIR}/${IMAGEDIR}/${ROOTFS_FILE}; \
+	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}; \
+	mv -f ${IMGDEPLOYDIR}/${IMAGE_NAME}${IMAGE_NAME_SUFFIX}.ubi ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${ROOTFS_FILE}; \
 	gzip -9c ${DEPLOY_DIR_IMAGE}/vmlinux.gz-${MACHINE}.bin > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
-	echo "${IMAGE_NAME}" > ${IMGDEPLOYDIR}/${IMAGEDIR}/imageversion; \
-	echo "https://forum.openvision.tech/app.php/donate" > ${IMGDEPLOYDIR}/${IMAGEDIR}/donate.txt; \
-	echo "rename this file to 'force' to force an update without confirmation" > ${IMGDEPLOYDIR}/${IMAGEDIR}/noforce; \
-	rm -f ${IMGDEPLOYDIR}/*.zip; \
-	cd ${IMGDEPLOYDIR}; \
+	echo ${IMAGE_NAME} > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/imageversion; \
+	echo "https://forum.openvision.tech/app.php/donate" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/donate.txt; \
+	echo "rename this file to 'force' to force an update without confirmation" > ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/noforce; \
+	cd ${DEPLOY_DIR_IMAGE}; \
 	zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.ubi; \
 	rm -f ${DEPLOY_DIR_IMAGE}/*.ubifs; \
@@ -56,6 +55,8 @@ IMAGE_CMD_ubi_append = " \
 	"
 
 MACHINE_FEATURES += "alsa usbhost switchoff textlcd osdposition hdmicec ci blindscan-tbs nofhdskin videoenhancement blindscan-tbs 7segment HDMI SCART"
+
+BOOTLOGO_FILENAME = "splash.bin"
 
 # Broken bootloader can only flash around 100 MB
 FLASHSIZE = "96"
