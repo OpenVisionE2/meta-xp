@@ -8,7 +8,6 @@ RCNAME = "xp1000"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS += "\
 	xp-dvb-modules-${MACHINE} \
-	gstreamer1.0-plugin-dvbmediasink \
 	"
 
 MTD_KERNEL = "mtd1"
