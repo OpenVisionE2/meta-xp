@@ -53,7 +53,7 @@ IMAGE_CMD_ubi_append = " \
 	rm -Rf ${IMAGEDIR}; \
 	"
 
-MACHINE_FEATURES += "alsa usbhost switchoff textlcd osdposition hdmicec ci blindscan-tbs nofhdskin videoenhancement blindscan-tbs 7segment HDMI SCART"
+MACHINE_FEATURES += "alsa usbhost switchoff textlcd osdposition hdmicec ci blindscan-tbs nofhdskin videoenhancement blindscan-tbs 7segment HDMI SCART linuxwifi"
 
 BOOTLOGO_FILENAME = "splash.bin"
 
