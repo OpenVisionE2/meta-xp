@@ -63,3 +63,4 @@ FLASHSIZE = "96"
 require conf/machine/include/tune-mips32.inc
 
 BOX_BRAND = "xp"
+DISPLAY_BRAND = "MaxDigital"
